@@ -1,7 +1,9 @@
-# tinyapp
-coding challenge
+# TinyApp : StarHub
 
-# Create React App example
+## The idea behind the app
+
+Implement a small web app that will list the most starred Github repos that were created in the last 30 days. You'll be fetching the sorted JSON data directly from the Github API (Github API explained down below).
+
 
 ## How to use
 
@@ -18,11 +20,6 @@ Install it and run:
 npm i
 npm start
 ```
-
-## The idea behind the app
-
-Implement a small web app that will list the most starred Github repos that were created in the last 30 days. You'll be fetching the sorted JSON data directly from the Github API (Github API explained down below).
-
 
 ## Features
 * As a User I should be able to list the most starred Github repos that were created in the last 30 days. 
@@ -69,3 +66,8 @@ Here's what each element represents :
 ## Contributing
 
 Generally open an issue (or comment on an issue if there's one already) before starting work on a PR.
+
+## License
+
+GPL 3
+
