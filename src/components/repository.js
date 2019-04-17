@@ -62,8 +62,6 @@ const Repository = ({classes, repo}) =>
                   
                   Subbmited {moment(repo.created_at).fromNow()} by {repo.owner.login}
                 </div>
-                
-                
               </Typography>
             </CardContent>
           </div>

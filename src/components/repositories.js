@@ -11,8 +11,7 @@ import InfiniteScroll from 'react-infinite-scroller';
 
 const styles = theme => ({
   root: {
-    textAlign: 'center',
-    // paddingTop: theme.spacing.unit * 2,
+    textAlign: 'center'
   },
 });
 
@@ -27,20 +26,6 @@ class Repositories extends React.Component {
     currentPage: 1,
     hasMoreItems: true,
   };
-
-  // componentDidMount = () => {
-  //   const date = moment().format('YYYY-MM-DD');
-  //   console.log('gettin repos of ',date)
-    
-  //   const url = api+'?q=created:>'+date+'&sort=stars&order=desc'
-  //   fetch(url)
-  //     .then(response => {
-  //       console.log(response);
-  //       return response.json() 
-  //     })
-  //     .then(data => this.setState({ repositories: data.items, total_count: data.total_count }))
-  //     .catch(error => console.error(error));
-  // };
   
   loadItems = () => {
     const { currentPage, repositories } = this.state;
