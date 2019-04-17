@@ -9,6 +9,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../withRoot';
+import Repositories from '../components/repositories';
 
 const styles = theme => ({
   root: {
@@ -52,14 +53,12 @@ class Index extends React.Component {
           </DialogActions>
         </Dialog>
         <Typography variant="h4" gutterBottom>
-          Material-UI
+          StarHub
         </Typography>
         <Typography variant="subtitle1" gutterBottom>
-          example project
+          All starred repositories in the last 30 days
         </Typography>
-        <Button variant="contained" color="secondary" onClick={this.handleClick}>
-          Super Secret Password
-        </Button>
+        <Repositories />
       </div>
     );
   }
