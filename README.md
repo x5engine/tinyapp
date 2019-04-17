@@ -21,7 +21,7 @@ npm start
 
 ## The idea behind the app
 
-The task is to implement a small webapp that will list the most starred Github repos that were created in the last 30 days. You'll be fetching the sorted JSON data directly from the Github API (Github API explained down below).
+Implement a small web app that will list the most starred Github repos that were created in the last 30 days. You'll be fetching the sorted JSON data directly from the Github API (Github API explained down below).
 
 
 ## Features
@@ -39,6 +39,7 @@ The task is to implement a small webapp that will list the most starred Github r
 
 * React
 * Material UI
+* Caching fetched items
 
 
 ## How to get the data from Github 
@@ -64,3 +65,7 @@ Here's what each element represents :
 
 ![alt text](https://raw.githubusercontent.com/hiddenfounders/frontend-coding-challenge/master/row_explained.png)
 
+
+## Contributing
+
+Generally open an issue (or comment on an issue if there's one already) before starting work on a PR.

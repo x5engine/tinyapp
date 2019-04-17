@@ -5,10 +5,11 @@
   "dependencies": {
     "@material-ui/core": "latest",
     "moment": "^2.24.0",
-    "moment-timezone": "^0.5.23",
     "prop-types": "latest",
+    "qwest": "^4.5.0",
     "react": "latest",
     "react-dom": "latest",
+    "react-infinite-scroller": "^1.2.4",
     "react-scripts": "latest"
   },
   "scripts": {

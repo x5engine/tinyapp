@@ -1,16 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Chip from '@material-ui/core/Chip';
-
 
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 
+import Link from '@material-ui/core/Link';
+
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../withRoot';
+import moment from 'moment';
 
 const styles = theme => ({
   root: {
@@ -33,31 +34,15 @@ const styles = theme => ({
   chip: {
     margin: theme.spacing.unit * 2,
   },
+  link: {
+    margin: theme.spacing.unit,
+  },
 });
 
-class Repository extends React.Component {
-  state = {
-    open: false,
-  };
+const kFormatter = (num) => Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
 
-  handleClose = () => {
-    this.setState({
-      open: false,
-    });
-  };
-
-  handleClick = () => {
-    this.setState({
-      open: true,
-    });
-  };
-
-  render() {
-    const { classes, repo } = this.props;
-    const { open } = this.state;
-
-    return (
-      <div className={classes.root}>
+const Repository = ({classes, repo}) =>
+      (<div className={classes.root}>
         <Card className={classes.card}>
           <CardMedia
               className={classes.cover}
@@ -66,24 +51,24 @@ class Repository extends React.Component {
             />
           <div className={classes.details}>
             <CardContent className={classes.content}>
-              <Typography component="h5" variant="h5">
+              <Link href={repo.html_url} variant="h5" className={classes.link}>
                 {repo.name}
-              </Typography>
+              </Link>
               <Typography variant="subtitle1" color="textSecondary">
                 {repo.description}
-                <Chip label={repo.stargazers_count} className={classes.chip} variant="outlined" />
-                <Chip label={repo.forks_count} className={classes.chip} variant="outlined" />
+                <div>
+                  <Chip label={'Stars: '+kFormatter(repo.stargazers_count)} className={classes.chip} variant="outlined" />
+                  <Chip label={'Issues: '+kFormatter(repo.open_issues_count)} className={classes.chip} variant="outlined" />
+                  
+                  Subbmited {moment(repo.created_at).fromNow()} by {repo.owner.login}
+                </div>
+                
+                
               </Typography>
             </CardContent>
           </div>
         </Card>
       </div>
-    );
-  }
-}
-
-Repository.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+);
 
 export default withRoot(withStyles(styles)(Repository));
