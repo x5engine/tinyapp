@@ -4,6 +4,9 @@
 
 Implement a small web app that will list the most starred Github repos that were created in the last 30 days. You'll be fetching the sorted JSON data directly from the Github API (Github API explained down below).
 
+## Try it!
+
+[Starhub Demo](https://starhub.ucefkh.now.sh/)
 
 ## How to use
 
